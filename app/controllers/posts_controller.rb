@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @post.created_at.strftime("%B %d %Y, %l:%M%P")
     redirect_to posts_url
   end
 
@@ -17,13 +16,31 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @post = Post.all.order("created_at DESC")
   end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(update_post_params)
+      redirect_to posts_url
+  else
+      render 'edit'
+  end
+end
+
 
   private
 
   def post_params
     params.require(:post).permit(:message, :created_at)
+  end
+
+  def update_post_params
+    params.require(:post).permit(:message, :updated_at)
   end
 
 end
