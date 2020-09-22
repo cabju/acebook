@@ -4,6 +4,20 @@
   <p><%= post.created_at.strftime('%H:%M:%S') %></p>
   <%= link_to 'Destroy', post, :method => :delete, :confirm => "Are you sure?" %>
   <%= link_to 'Edit', edit_post_path(post.id ) %>
+  <div class="comment-count">
+  <span class="tag is-rounded"><%= post.comments.count %> comments</span>
+</div>
+<p>Comments: <%= render post.comments %></p>
+<p> Add a comment </p>
+<%= form_for @comments do |form| %>
+  <%= form.label :comment %>
+  <%= form.text_field :comment %>
+
+  <%= form.submit "Submit" %>
+<% end %>
+
+
+
 <% end %>
 
 <br>

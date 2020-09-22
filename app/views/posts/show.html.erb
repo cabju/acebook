@@ -1,0 +1,14 @@
+<p><%= post.message %></p>
+<p><%= post.created_at.strftime('%H:%M:%S') %></p>
+
+<%= render @comments %>
+
+
+<%= form_for :comment, :url => post_comments_path(@post) do |f|%>
+    <%= f.text_field :message %>
+    <%= f.submit%>
+<% end %>
+
+<%= button_to 'Delete', @post, method: :delete, :onclick => " returconfirm('Are    you sure you want to delete this post?')"%>
+  <%end%>
+

@@ -17,6 +17,13 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.all.order("created_at DESC")
+    @comments = Comment.new
+    
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = @post.comments
   end
 
   def edit
