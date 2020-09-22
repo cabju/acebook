@@ -7,14 +7,20 @@
   <div class="comment-count">
   <span class="tag is-rounded"><%= post.comments.count %> comments</span>
 </div>
-<p>Comments: <%= render post.comments %></p>
+
+<p>Comments: <%= post.comments %></p>
 <p> Add a comment </p>
-<%= form_for @comments do |form| %>
+
+<%= form_for @comment do |form| %>
   <%= form.label :comment %>
   <%= form.text_field :comment %>
+  <%= form.hidden_field :post_id, :value => post.id %>
 
   <%= form.submit "Submit" %>
 <% end %>
+
+
+<%= @post.comments %>
 
 
 

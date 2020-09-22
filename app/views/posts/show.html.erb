@@ -4,11 +4,15 @@
 <%= render @comments %>
 
 
-<%= form_for :comment, :url => post_comments_path(@post) do |f|%>
-    <%= f.text_field :message %>
-    <%= f.submit%>
+<%= form_for @comment do |form| %>
+  <%= form.label :comment %>
+  <%= form.text_field :comment %>
+  <%= form.hidden_field :post_id, :value => post.id %>
+
+  <%= form.submit "Submit" %>
 <% end %>
 
-<%= button_to 'Delete', @post, method: :delete, :onclick => " returconfirm('Are    you sure you want to delete this post?')"%>
-  <%end%>
+<% end %>
+
+
 

@@ -17,7 +17,8 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.all.order("created_at DESC")
-    @comments = Comment.new
+    @comment = Comment.new
+    #params.require(:post).permit(:message
     
   end
 
