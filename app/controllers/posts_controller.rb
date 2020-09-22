@@ -3,9 +3,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-
   def create
     @post = Post.create(post_params)
+    @post.created_at.strftime("%B %d %Y, %l:%M%P")
     redirect_to posts_url
   end
 
