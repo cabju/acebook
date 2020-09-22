@@ -3,14 +3,24 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+
   def create
     @post = Post.create(post_params)
     # @post.created_at.strftime("%B %d %Y, %l:%M%P")
     redirect_to posts_url
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_url
+  end
+
   def index
-    @posts = Post.all.reverse
+
+    @posts = Post.all.order("created_at DESC")
+
   end
 
   # def show
@@ -24,6 +34,9 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :time)
+
+    params.require(:post).permit(:message, :created_at)
+
   end
+
 end
