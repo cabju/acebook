@@ -2,6 +2,7 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at.strftime('%H:%M:%S') %></p>
+  <%= link_to 'Destroy', post, :method => :delete, :confirm => "Are you sure?" %>
 <% end %>
 
 <%= link_to new_post_path do %>
