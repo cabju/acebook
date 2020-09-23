@@ -1,6 +1,3 @@
 class Post < ApplicationRecord
-
-    # has many :comments
-    # @post.created_at.strftime("%B %d %Y, %l:%M%P")
-
+  has_many :comments, dependent: :destroy
 end
