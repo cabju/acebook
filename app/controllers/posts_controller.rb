@@ -35,12 +35,13 @@ class PostsController < ApplicationController
       @post.destroy
 
       redirect_to posts_url
-
   end
 
   private
 
   def post_params
     params.require(:post).permit(:message, :created_at)
+
   end
+
 end

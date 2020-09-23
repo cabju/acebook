@@ -40,6 +40,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'rubocop', '~> 0.91.0', require: false
+  gem 'devise'
 end
 
 group :development do

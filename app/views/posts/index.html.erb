@@ -7,10 +7,13 @@
 <%= link_to "Edit", edit_post_path(post.id) %>
 <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: "Are you sure?" } %>
 <%= link_to "View Post", post_path(post.id) %>
+
 <% end %>
 
 
 <br>
 <%= link_to new_post_path do %>
   New post
+
+
 <% end %>
