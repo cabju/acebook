@@ -1,11 +1,24 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
-      "/Users/kristynacervenkova/Desktop/acebook-rails-template/spec/models/post_spec.rb": {
-=======
-      "/Users/imogenkraak/Desktop/Projects/acebook/spec/models/post_spec.rb": {
->>>>>>> 3b0371ecd07d9a83f04ca5a014f1f558f56d7b0e
+      "/Users/tamara/JS_Projects/acebook/spec/models/comment_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/tamara/JS_Projects/acebook/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/tamara/JS_Projects/acebook/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -14,34 +27,24 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/kristynacervenkova/Desktop/acebook-rails-template/app/models/post.rb": {
-=======
-      "/Users/imogenkraak/Desktop/Projects/acebook/app/models/post.rb": {
->>>>>>> 3b0371ecd07d9a83f04ca5a014f1f558f56d7b0e
+      "/Users/tamara/JS_Projects/acebook/app/models/post.rb": {
         "lines": [
           1,
-          null,
-          null,
+          1,
+          1,
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/kristynacervenkova/Desktop/acebook-rails-template/app/models/application_record.rb": {
-=======
-      "/Users/imogenkraak/Desktop/Projects/acebook/app/models/application_record.rb": {
->>>>>>> 3b0371ecd07d9a83f04ca5a014f1f558f56d7b0e
+      "/Users/tamara/JS_Projects/acebook/spec/models/user_spec.rb": {
         "lines": [
+          1,
+          null,
           1,
           1,
           null
         ]
       }
     },
-<<<<<<< HEAD
-    "timestamp": 1600772853
-=======
-    "timestamp": 1600701085
->>>>>>> 3b0371ecd07d9a83f04ca5a014f1f558f56d7b0e
+    "timestamp": 1600874629
   }
 }
