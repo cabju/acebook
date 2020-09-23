@@ -20,8 +20,10 @@
   <p><strong>Commented at:</strong>
   <%= comment.created_at.strftime('%H:%M:%S') %>
   </p>
+  <td><% if current_user.id == comment.user_id %></td>
   <%= link_to 'Delete', [comment.post, comment],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+<% end %>
 <% end %>
 
 
