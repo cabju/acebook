@@ -6,8 +6,8 @@
   <p>
     <strong>Commented by:</strong>
     <% user = comment.user.to_json %>
-    <% email = JSON.parse(user).to_h%>
-   <%= email["email"] %>
+    <% username = JSON.parse(user).to_h%>
+   <%= username["username"] %>
     <br>
   </p>
 
@@ -36,5 +36,7 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<p><%= link_to 'Back', posts_path %></p>
 
 
