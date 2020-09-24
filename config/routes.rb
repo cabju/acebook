@@ -12,6 +12,10 @@ resources :posts do
   resources :comments
 end
 
+resources :posts do
+  resources :likes
+end
+
 devise_scope :user do
   get 'login', to: 'devise/sessions#new'
 end

@@ -1,6 +1,8 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  
    <p>Created at: <%= post.created_at.strftime('%H:%M:%S') %></p>
    <p>Posted by: <% user = post.user.to_json %>
    <% username = JSON.parse(user).to_h%>
