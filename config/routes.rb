@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/user' => "posts#index", :as => :user_root
   #get 'sign_in'  => 'users#new' 
+  post '/posts/:post_id/comments/:id/edit' => 'comments#update'
   get '/user/:id' => "users#show"
-  resources :posts, :users
+  patch '/posts/:post_id/comments/:id' => 'comments#update'
+  resources :posts, :users, :comments
 
 
 resources :posts do
