@@ -1,19 +1,36 @@
 <p><%= @post.message %></p>
 <p><%= @post.created_at.strftime('%H:%M:%S') %></p>
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', post_likes_path(@post), method: :post %>
+<% end %>
 
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
   <p>
-    <strong>Commenter:</strong>
-    <%= comment.name %>
+    <strong>Commented by:</strong>
+    <% user = comment.user.to_json %>
+    <% username = JSON.parse(user).to_h%>
+   <%= username["username"] %>
+    <br>
   </p>
- 
+
+  <strong>Name:</strong>
+  <%= comment.name %>
   <p>
     <strong>Comment:</strong>
     <%= comment.comment %>
   </p>
+  <p><strong>Commented at:</strong>
+  <%= comment.created_at.strftime('%H:%M:%S') %>
+  </p>
+  <% if current_user.id == comment.user_id %>
   <%= link_to 'Delete', [comment.post, comment],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+<% end %>
 <% end %>
 
 
@@ -31,5 +48,7 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<p><%= link_to 'Back', posts_path %></p>
 
 

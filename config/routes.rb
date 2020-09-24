@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/user' => "posts#index", :as => :user_root
   #get 'sign_in'  => 'users#new' 
-  
+  get '/user/:id' => "users#show"
   resources :posts, :users
 
 
 resources :posts do
   resources :comments
+end
+
+resources :posts do
+  resources :likes
 end
 
 devise_scope :user do
