@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  describe "GET /new " do
+
+  let(:post) { Post.new(user_id: 1) }
+  describe "GET /posts/new " do
     it "responds with 200" do
+    
       get :new
       expect(response).to have_http_status(200)
     end
@@ -27,3 +30,4 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 end
+
