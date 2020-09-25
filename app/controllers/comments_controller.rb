@@ -41,6 +41,7 @@ class CommentsController < ApplicationController
     def edit
      @post = Post.find(params[:post_id])
       @comment = @post.comments.find(params[:id])
+      session[:return_to] ||= request.referer
     end
 
     def update
@@ -48,7 +49,10 @@ class CommentsController < ApplicationController
       @comment = @post.comments.find(params[:id])
 
       if @comment.update(comment_params)
-        redirect_to post_path(@post)
+        
+        redirect_to session.delete(:return_to)
+        #redirect_to post_path(@post)
+        #redirect_to user_path(@post.user_id)
       else
         render 'edit'
       end
