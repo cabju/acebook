@@ -35,7 +35,8 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       @post.destroy
 
-      redirect_to posts_url
+      #redirect_to posts_url
+      redirect_back(fallback_location: root_path)
   end
 
   private

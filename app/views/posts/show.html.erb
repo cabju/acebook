@@ -1,5 +1,6 @@
 <p><%= @post.message %></p>
 <p><%= @post.created_at.strftime('%H:%M:%S') %></p>
+<p>Posted by: <%= link_to @post.user.username, @post.user%> </p>
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
@@ -10,16 +11,20 @@
 
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
-  <p>
-    <strong>Commented by:</strong>
+
+<%# Get user id for each comment %>
+<% user = comment.user.to_json %>
+    <% username = JSON.parse(user).to_h%>
+   <% userid = username["id"] %>
+
+<p><strong>Commented by:</strong> <%= link_to user_path(userid) do %>
     <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
    <%= username["username"] %>
     <br>
   </p>
+<% end %>
 
-  <strong>Name:</strong>
-  <%= comment.name %>
   <p>
     <strong>Comment:</strong>
     <%= comment.comment %>
@@ -37,10 +42,6 @@
 
 <h2>Add a comment:</h2>
 <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
   <p>
     <%= form.label :comment %><br>
     <%= form.text_area :comment %>

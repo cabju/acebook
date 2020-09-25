@@ -15,7 +15,8 @@ class CommentsController < ApplicationController
          #@comment = @post.comments.create(params[:comment].permit(:name, :comment))
          @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
         
-        redirect_to post_path(@post) 
+        #redirect_to post_path(@post) 
+        redirect_back(fallback_location: root_path)
 
 
           if @comment.save;
@@ -33,12 +34,14 @@ class CommentsController < ApplicationController
         @post = Post.find(params[:post_id])
         @comment = @post.comments.find(params[:id])
         @comment.destroy
-        redirect_to post_path(@post)
+        #redirect_to post_path(@post)
+        redirect_back(fallback_location: root_path)
     end
 
     def edit
      @post = Post.find(params[:post_id])
       @comment = @post.comments.find(params[:id])
+      session[:return_to] ||= request.referer
     end
 
     def update
@@ -46,7 +49,10 @@ class CommentsController < ApplicationController
       @comment = @post.comments.find(params[:id])
 
       if @comment.update(comment_params)
-        redirect_to post_path(@post)
+        
+        redirect_to session.delete(:return_to)
+        #redirect_to post_path(@post)
+        #redirect_to user_path(@post.user_id)
       else
         render 'edit'
       end
