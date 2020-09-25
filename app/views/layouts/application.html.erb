@@ -9,18 +9,39 @@
   </head>
 
   <body>
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#"><img src="railsbook-logo.png" style="width:200px; height:48px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <%# <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li> %>
+      <%# <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li> %>
+    </ul>
+  </div>
+
+
+<div class="navfont">
   <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.username %></strong>
+    Logged in as <strong class="usernamefont"><%= current_user.username %></strong>
+    <br>
     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'test' %> |
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'test'  %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path, :class => 'test'  %> |
     <%= link_to "Login", new_user_session_path, :class => 'test'  %>
   <% end %>
-
-  <div>
-    <a class='test' href="/"></a>
-  </div>
+</div>
+</nav>
+<div style="height:50px">hello</div>
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -28,6 +49,14 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <br><br>
+    <main role="main" class="container">
+  <div class="jumbotron">
+  <%= yield %>
+  </div>
+</main>
+    
   </body>
 </html>
+
+

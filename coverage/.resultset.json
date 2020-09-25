@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/imogenkraak/Desktop/Projects/acebook/spec/models/comment_spec.rb": {
+      "/Users/tamara/JS_Projects/acebook/spec/models/comment_spec.rb": {
         "lines": [
           1,
           null,
@@ -10,7 +10,7 @@
           null
         ]
       },
-      "/Users/imogenkraak/Desktop/Projects/acebook/app/models/comment.rb": {
+      "/Users/tamara/JS_Projects/acebook/app/models/comment.rb": {
         "lines": [
           1,
           1,
@@ -18,7 +18,7 @@
           null
         ]
       },
-      "/Users/imogenkraak/Desktop/Projects/acebook/spec/models/like_spec.rb": {
+      "/Users/tamara/JS_Projects/acebook/spec/models/like_spec.rb": {
         "lines": [
           1,
           null,
@@ -27,7 +27,7 @@
           null
         ]
       },
-      "/Users/imogenkraak/Desktop/Projects/acebook/app/models/like.rb": {
+      "/Users/tamara/JS_Projects/acebook/app/models/like.rb": {
         "lines": [
           1,
           1,
@@ -35,7 +35,7 @@
           null
         ]
       },
-      "/Users/imogenkraak/Desktop/Projects/acebook/spec/models/post_spec.rb": {
+      "/Users/tamara/JS_Projects/acebook/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -44,7 +44,7 @@
           null
         ]
       },
-      "/Users/imogenkraak/Desktop/Projects/acebook/app/models/post.rb": {
+      "/Users/tamara/JS_Projects/acebook/app/models/post.rb": {
         "lines": [
           1,
           1,
@@ -53,7 +53,7 @@
           null
         ]
       },
-      "/Users/imogenkraak/Desktop/Projects/acebook/spec/models/user_spec.rb": {
+      "/Users/tamara/JS_Projects/acebook/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -63,6 +63,6 @@
         ]
       }
     },
-    "timestamp": 1600946072
+    "timestamp": 1601047787
   }
 }
