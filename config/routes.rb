@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/posts/:post_id/comments/:id/edit' => 'comments#update'
   get '/user/:id' => "users#show"
   patch '/posts/:post_id/comments/:id' => 'comments#update'
+  post '/posts/:post_id/comments' => 'comments#create'
   resources :posts, :users, :comments
 
 
