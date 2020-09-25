@@ -1,3 +1,6 @@
+<div class="jumbotron" style="padding:50px">
+<p><strong class="purple usernamefont">Post View</strong></p>
+<div class="jumbotron" style="padding:50px">
 <p>Posted by: <%= link_to @post.user.username, @post.user%> </p>
 <p>Posted at: <%= @post.created_at.strftime('%H:%M:%S') %></p>
 <p><%= @post.message %></p>
@@ -53,5 +56,7 @@
 <% end %>
 
 <p><%= link_to 'Back', posts_path %></p>
+</div>
+</div>
 
 

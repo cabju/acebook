@@ -1,4 +1,6 @@
-<p>User posts for: <%= @user.username %></p>
+<div class="jumbotron" style="padding:50px">
+<p><strong class="purple usernamefont">Posts by <%= @user.username %></p></strong></p>
+<div class="jumbotron" style="padding:50px">
 
 <% @user.posts.each do |post| %>
 <p><strong>Post:</strong> <%= post.message %></p>
@@ -62,8 +64,8 @@
     <%= form.submit %>
   </p>
 <% end %>
-
-
 <%end%>
+</div>
+</div>
 
 

@@ -70,11 +70,24 @@ input {
     color: #fff;
     background-color: #5B2A86;
     border-radius: 20px;
-    padding: 5px;
-    width: 95px;
+    padding: 5px 15px 5px 15px;
+    width: auto;
     border-style: none;
 }
 
 .lightgreen {
     color: #17C3B2;
+}
+
+.purple {
+    color: #5B2A86
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding-bottom: 15px;
 }

@@ -1,4 +1,6 @@
-
+<div class="jumbotron" style="padding:50px">
+<p><strong class="purple usernamefont">Posts</strong></p>
+<div class="jumbotron" style="padding:50px">
 <% @posts.each do |post| %>
 <p><span class="lightgreen">Posted by:</span> <%= link_to post.user.username, post.user%> </p>
  <p>Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
@@ -30,6 +32,6 @@
 <br>
 <%= button_to 'New post', new_post_path, method: :get %>
 
-  
-
 <% end %>
+</div>
+</div>
