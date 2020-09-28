@@ -3,7 +3,7 @@
 <div class="jumbotron" style="padding:50px">
 
 <% @user.posts.each do |post| %>
-<p><span class="lightgreen">Posted by </span><%= post.user.username%></p>
+<p><span class="lightgreen">Posted by </span><span class ="purple"><%= post.user.username%></p></span>
 <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
 <p><%= post.message %></p>
 
@@ -25,7 +25,7 @@
   </div>
   </div>
   <div style="display:inline-block; float: right">
-  <span><%= post.comments.count %> comments</span>
+  <span class="lightgreen"><%= post.comments.count %> comments</span>
 <br>
 </div>
 <br>
@@ -55,16 +55,16 @@
    <% userid = username["id"] %>
    <%if current_user.id == comment.user_id %>
    <p><span class="lightgreen">By:</span>
-    <% user = comment.user.to_json %>
+   <span class ="purple"> <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
-   <%= username["username"] %>
+   <span class ="purple"><%= username["username"] %> </span>
     <br>
   </p>
   <%else%>
   <p><span class="lightgreen">By:</span><%= link_to user_path(userid) do %>
-    <% user = comment.user.to_json %>
+    <span class ="purple"><% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
-   <%= username["username"] %>
+   <%= username["username"] %></span>
     <br>
   </p>
   <%end%>
@@ -92,8 +92,11 @@
     <%= form.text_area :comment, :class => 'textcommentsbox', :placeholder => 'Write a comment...' %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit "Add a comment"%>
   </p>
+  <br>
+  <hr style="background-color:#5B2A86">
+  <br>
 <% end %>
 
 <%end%>
