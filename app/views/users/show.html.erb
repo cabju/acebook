@@ -11,7 +11,6 @@
 
 <div style="display:inline-block; width:50%">
 <p class="lightgreen"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-<div style="display:inline-block">
 <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
 <%= button_to post_like_path(post, pre_like), method: :delete do %>
@@ -23,32 +22,22 @@
   <% end %>
   <% end %>
   </div>
-  </div>
   <div style="display:inline-block; float: right">
   <span class="lightgreen"><%= post.comments.count %> comments</span>
 <br>
+<br>
+<% if current_user.id == post.user_id %>
+<%= link_to "Edit", edit_post_path(post.id) %> |
+<%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
 </div>
 <br>
 <br>
 <p><strong class="textpurple"><%=fa_icon "comment"%> Comments</strong></p>
-
-
-
 <hr>
-
-
-
-
-<% if current_user.id == post.user_id %>
-<%= link_to "Edit", edit_post_path(post.id) %>
-<%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
-
-
 
 <% post.comments.each do |comment| %>
 <p><%= comment.comment %></p>
-
 
 <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
@@ -69,16 +58,16 @@
   </p>
   <%end%>
   <%end%>
-  <div style="display:inline-block">
+  <div style="display:inline-block; width:50%">
   <p class="postedat">Commented at:
   <%= comment.created_at.strftime('%H:%M:%S') %>
   </p>
   </div>
   <div style="display:inline-block; float: right">
   <% if current_user.id == comment.user_id %>
-  <%= link_to 'Delete', [comment.post, comment],
+   <%= link_to "Edit", edit_post_comment_path(post, comment) %> |
+   <%= link_to 'Delete', [comment.post, comment],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
-   <%= link_to "Edit", edit_post_comment_path(post, comment) %> 
 <% end %>
 </div>
 <%end%>
@@ -89,7 +78,7 @@
 
 <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
   <p>
-    <%= form.text_area :comment, :class => 'textcommentsbox', :placeholder => 'Write a comment...' %>
+    <%= form.text_area :comment, class: "comment-box", placeholder: " Write a comment...", style: "padding:5px 10px 20px 10px;" %>
   </p>
   <p>
     <%= form.submit "Add a comment"%>
