@@ -3,7 +3,7 @@
 <div class="jumbotron" style="padding:50px">
 <% @posts.each do |post| %>
 <p><span class="lightgreen">Posted by:</span> <%= link_to post.user.username, post.user%> </p>
- <p>Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
+ <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
   <p><%= post.message %></p>
   <p class="lightgreen"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <div style="display:inline-block">
