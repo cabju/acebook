@@ -33,10 +33,14 @@
 </div>
 <br>
 <br>
+
 <p><strong class="textpurple"><%=fa_icon "comment"%> Comments</strong></p>
 <hr>
-
+<%if post.comments.count == 0 %>
+<p>This post has no comments yet...</p>
+<%end%>
 <% post.comments.each do |comment| %>
+
 <p><%= comment.comment %></p>
 
 <% user = comment.user.to_json %>
