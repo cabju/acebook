@@ -41,6 +41,9 @@ group :development, :test do
   gem 'simplecov-console', require: false
   gem 'rubocop', '~> 0.91.0', require: false
   gem 'devise'
+  gem 'bootstrap', '~> 4.0.0'
+  gem 'jquery-rails'
+  gem 'font-awesome-rails'
 end
 
 group :development do
