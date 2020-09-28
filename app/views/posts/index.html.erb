@@ -40,7 +40,7 @@
 <hr style="background-color:#5B2A86">
 <% end %>
 
-<% if current_user.id && @posts.count > 1%>
+<% if current_user.id && @posts.count >= 1%>
 <br>
 <%= button_to 'New post', new_post_path, method: :get %>
 
