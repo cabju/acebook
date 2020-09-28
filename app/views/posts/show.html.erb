@@ -1,62 +1,74 @@
 <div class="jumbotron" style="padding:50px">
-<p><strong class="purple usernamefont">Post View</strong></p>
+<p><strong class="purple usernamefont"><%=fa_icon "eye"%> Post View</strong></p>
 <div class="jumbotron" style="padding:50px">
-<p>Posted by: <%= link_to @post.user.username, @post.user%> </p>
+<p class="lightgreen">Posted by: <%= link_to @post.user.username, @post.user%> </p>
 <p class="postedat">Posted at: <%= @post.created_at.strftime('%H:%M:%S') %></p>
 <p><%= @post.message %></p>
+<hr>
 
-<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<div style="display:inline-block; width:50%">
+<p class="lightgreen"><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
-  <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+  <%= button_to post_like_path(@post, pre_like), method: :delete do %>
+  <%=fa_icon "thumbs-down"%> Unlike
+  <%end%>
 <% else %>
-  <%= button_to 'Like', post_likes_path(@post), method: :post %>
+  <%= button_to post_likes_path(@post), method: :post do %>
+  <%=fa_icon "thumbs-up"%> Like
+  <%end%>
 <% end %>
+</div>
 
-<h2>Comments</h2>
+<div style="display:inline-block; float: right">
+  <p class="lightgreen"><%= @post.comments.count %> comments</p>
+  <% if current_user.id == @post.user_id %>
+<%= link_to "Edit", edit_post_path(@post.id) %> |
+<%= link_to "Delete", post_path(@post.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
+</div>
+<br>
+<br>
+<p class="usernamefont purple"><strong><%=fa_icon "comment"%> Comments</strong></p>
+<hr style="background-color:#5B2A86" >
 <% @post.comments.each do |comment| %>
-
-<%# Get user id for each comment. %>
+<%# Get user id for each comment %>
 <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
    <% userid = username["id"] %>
 
-<p><strong>Commented by:</strong> <%= link_to user_path(userid) do %>
+<p class="lightgreen">By: <%= link_to user_path(userid) do %>
     <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
    <%= username["username"] %>
     <br>
   </p>
 <% end %>
-
+<p class="postedat">Commented at:
+<%= comment.created_at.strftime('%H:%M:%S') %>
+</p>
   <p>
-    <strong>Comment:</strong>
     <%= comment.comment %>
   </p>
-  <p><strong>Commented at:</strong>
-  <%= comment.created_at.strftime('%H:%M:%S') %>
-  </p>
+  <div style="display:inline-block; float: right">
   <% if current_user.id == comment.user_id %>
+  <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
   <%= link_to 'Delete', [comment.post, comment],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
-   <%= link_to "Edit", edit_post_comment_path(@post, comment) %> 
 <% end %>
+</div><br><hr>
 <% end %>
 
 
-<h2>Add a comment:</h2>
+<p class="usernamefont purple"><strong>Add a comment</strong></p>
 <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
   <p>
-    <%= form.label :comment %><br>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, class: "comment-box", placeholder: " Write a comment...", style: "padding:5px 10px 20px 10px;" %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit "Add comment" %>
   </p>
 <% end %>
-
-<p><%= link_to 'Back', posts_path %></p>
 </div>
+<div style="float: right"><%= button_to 'Back', posts_path, method: :get %></div>
 </div>
-
-

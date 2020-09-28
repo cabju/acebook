@@ -1,8 +1,12 @@
-
+<div class="jumbotron" style="padding:50px">
+<p><strong class="purple usernamefont"><%=fa_icon "edit"%> Edit Comment</strong></p>
+<div class="jumbotron" style="padding:50px">
 <%= form_for @comment, :url => post_comment_path(@post) do |form| %>
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
+
+    <%= form.text_area :comment, class: "comment-box", style: "padding:5px 10px 20px 10px;" %>
     <%= form.hidden_field :post_id %>
-  
+    <br><br>
     <%= form.submit "Update comment" %>
   <% end %>
+</div>
+</div>

@@ -1,7 +1,12 @@
+<div class="jumbotron" style="padding:50px">
+<p><strong class="purple usernamefont"><%=fa_icon "file"%> New Post</strong></p>
+<div class="jumbotron" style="padding:50px">
 <%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-
+  <%= form.label "Write new post here:" %>
+  <br><br>
+  <%= form.text_area :message, class: "comment-box", style: "padding:5px 10px 20px 10px;"%>
+  <br><br>
   <%= form.submit "Submit" %>
 <% end %>
-
+</div>
+</div>
