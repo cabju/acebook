@@ -16,7 +16,7 @@
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
 
-<%# Get user id for each comment. %>
+<%# Get user id for each comment %>
 <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
    <% userid = username["id"] %>
