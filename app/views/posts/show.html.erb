@@ -30,10 +30,8 @@
 <br>
 <br>
 <p class="usernamefont purple"><strong><%=fa_icon "comment"%> Comments</strong></p>
-<hr>
+<hr style="background-color:#5B2A86" >
 <% @post.comments.each do |comment| %>
-<div>
-<div style="display:inline-block; width:50%">
 <%# Get user id for each comment %>
 <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
@@ -52,18 +50,16 @@
   <p>
     <%= comment.comment %>
   </p>
-</div>
   <div style="display:inline-block; float: right">
   <% if current_user.id == comment.user_id %>
   <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
   <%= link_to 'Delete', [comment.post, comment],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
 <% end %>
+</div><br><hr>
 <% end %>
-</div>
-</div>
-<hr>
-<div style="float: left; display:inline-block;">
+
+
 <p class="usernamefont purple"><strong>Add a comment</strong></p>
 <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
   <p>
@@ -73,7 +69,6 @@
     <%= form.submit "Add comment" %>
   </p>
 <% end %>
-</div>
 </div>
 <div style="float: right"><%= button_to 'Back', posts_path, method: :get %></div>
 </div>
