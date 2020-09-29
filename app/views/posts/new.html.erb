@@ -6,6 +6,11 @@
   <br><br>
   <%= form.text_area :message, class: "comment-box", style: "padding:5px 10px 20px 10px;"%>
   <br><br>
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <br><br>
   <%= form.submit "Submit" %>
 <% end %>
 </div>

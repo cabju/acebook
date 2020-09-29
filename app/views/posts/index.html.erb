@@ -9,6 +9,7 @@
 <% @posts.each do |post| %>
 <p><span class="lightgreen">Posted by: </span><%= image_tag(post.user.avatar, size: "40x42") %> <strong><%= link_to post.user.username, post.user%></strong> </p>
  <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
+  <%= image_tag(post.image.url, alt: 'Image') if post.image? %>
   <p><%= post.message %></p>
   <hr>
   
