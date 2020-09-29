@@ -5,11 +5,16 @@
   <%= form.label "Write new post here:" %>
   <br><br>
   <%= form.text_area :message, class: "comment-box", style: "padding:5px 10px 20px 10px;"%>
-  <%= form.text_area :video %>
   <br><br>
   <div>
     <%= form.label :image %>
     <%= form.file_field :image %>
+  </div>
+  <br><br>
+  <div>
+  <%= form.label :video, "Video url (youtube or vimeo)" %>
+  <br>
+  <%= form.text_area :video, class: "comment-box", style: "padding:5px 10px 20px 10px;" %>
   </div>
   <br><br>
   <%= form.submit "Submit" %>
