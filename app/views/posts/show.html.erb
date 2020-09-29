@@ -3,7 +3,8 @@
 <div class="jumbotron" style="padding:50px">
 <p class="lightgreen">Posted by: <%= image_tag(@post.user.avatar, size: "40x42") %> <strong><%= link_to @post.user.username, @post.user%></strong> </p>
 <p class="postedat">Posted at: <%= @post.created_at.strftime('%H:%M:%S') %></p>
-<%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+<%= image_tag(@post.image.url, alt: 'Image', style: "max-width:300px") if @post.image? %>
+<br><br>
 <p><%= @post.message %></p>
 <hr>
 
