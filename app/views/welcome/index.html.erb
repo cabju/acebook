@@ -1,26 +1,25 @@
 <div class="container text-center">
-<h2>Welcome to <%= image_tag('railsbook-logo.png', :size => '200x48') %></h2>
+<h2><%= image_tag('welcome-icon.png', style: "max-width: 600px;") %></h2>
+<br>
 <p>
-  The time is now: <%= Time.now %>
+  An interesting slogan here...
 </p>
+<br>
 </div>
 
-<div class="jumbotron" style="padding:50px; text-align: center">
-<% if user_signed_in? %>
-    <%= image_tag(current_user.avatar, size: "30x32") %> Welcome <strong class="usernamefont"><%= current_user.username %></strong>
-    <br>
-    <div style="display: inline-block">
-    <%= button_to 'Edit profile', edit_user_registration_path, :class => 'test', method: :get %>
-    </div>
-    <div style="display: inline-block">
-    <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'test', method: :get   %>
-    </div>
-  <% else %>
-  <div style="display: inline-block">
-    <%= button_to "Sign up", new_user_registration_path, :class => 'test', method: :get %>
-    </div>
-  <div style="display: inline-block">
-    <%= button_to "Login", new_user_session_path, :class => 'test', method: :get %>
-  </div>
-  <% end %>
+<div style="text-align: center">
+<div class="jumbotron homebox">
+<h3 class="purple">New to Railsbook?</h3>
+<br>
+<%= image_tag('signup-icon.png', style: "max-width: 150px;") %>
+<br><br>
+ <%= button_to "Sign up!", new_user_registration_path, style: "width:200px; height:50px; border-radius:35px; font-size:1.5rem", method: :get %>
+</div>
+<div class="jumbotron homebox">
+<h3 class="purple">Already a user?</h3>
+<br>
+<%= image_tag('login-icon.png', style: "max-width: 150px;") %>
+<br><br>
+<%= button_to "Login", new_user_session_path, style: "width:200px; height:50px; border-radius:35px; font-size:1.5rem", method: :get %>
+</div>
 </div>
