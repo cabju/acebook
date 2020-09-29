@@ -1,6 +1,26 @@
 <div class="container text-center">
-<h2>Welcome to Acebook!</h2>
+<h2>Welcome to <%= image_tag('railsbook-logo.png', :size => '200x48') %></h2>
 <p>
   The time is now: <%= Time.now %>
 </p>
+</div>
+
+<div class="jumbotron" style="padding:50px; text-align: center">
+<% if user_signed_in? %>
+    <%= image_tag(current_user.avatar, size: "30x32") %> Welcome <strong class="usernamefont"><%= current_user.username %></strong>
+    <br>
+    <div style="display: inline-block">
+    <%= button_to 'Edit profile', edit_user_registration_path, :class => 'test', method: :get %>
+    </div>
+    <div style="display: inline-block">
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'test', method: :get   %>
+    </div>
+  <% else %>
+  <div style="display: inline-block">
+    <%= button_to "Sign up", new_user_registration_path, :class => 'test', method: :get %>
+    </div>
+  <div style="display: inline-block">
+    <%= button_to "Login", new_user_session_path, :class => 'test', method: :get %>
+  </div>
+  <% end %>
 </div>
