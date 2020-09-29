@@ -1,7 +1,8 @@
 <div class="jumbotron" style="padding:50px">
 <p><strong class="purple usernamefont"><%=fa_icon "user"%> Posts by <%= @user.username %></p></strong></p>
 <div class="jumbotron" style="padding:50px">
-
+<%= image_tag(@user.avatar, size: "100x106") %>
+<br><br>
 <% @user.posts.each do |post| %>
 <p><span class="lightgreen">Posted by </span><span class ="purple"><%= post.user.username%></p></span>
 <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
@@ -47,14 +48,14 @@
     <% username = JSON.parse(user).to_h%>
    <% userid = username["id"] %>
    <%if current_user.id == comment.user_id %>
-   <p><span class="lightgreen">By:</span>
+   <p><span class="lightgreen">By: <%= image_tag(comment.user.avatar, size: "30x32") %> </span>
    <span class ="purple"> <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
    <span class ="purple"><%= username["username"] %> </span>
     <br>
   </p>
   <%else%>
-  <p><span class="lightgreen">By:</span><%= link_to user_path(userid) do %>
+  <p><span class="lightgreen">By:<%= image_tag(comment.user.avatar, size: "30x32") %> </span><%= link_to user_path(userid) do %>
     <span class ="purple"><% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
    <%= username["username"] %></span>

@@ -44,6 +44,10 @@ group :development, :test do
   gem 'bootstrap', '~> 4.0.0'
   gem 'jquery-rails'
   gem 'font-awesome-rails'
+  gem 'carrierwave'
+  gem 'mini_magick'
+  gem 'fog'
+  gem 'figaro'
 end
 
 group :development do

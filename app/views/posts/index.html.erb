@@ -7,7 +7,7 @@
 <% end %>
 <br>
 <% @posts.each do |post| %>
-<p><span class="lightgreen">Posted by:</span> <%= link_to post.user.username, post.user%> </p>
+<p><span class="lightgreen">Posted by: </span><%= image_tag(post.user.avatar, size: "40x42") %> <strong><%= link_to post.user.username, post.user%></strong> </p>
  <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
   <p><%= post.message %></p>
   <hr>
