@@ -1,7 +1,7 @@
 <div class="jumbotron" style="padding:50px">
 <p><strong class="purple usernamefont"><%=fa_icon "eye"%> Post View</strong></p>
 <div class="jumbotron" style="padding:50px">
-<p class="lightgreen">Posted by: <%= link_to @post.user.username, @post.user%> </p>
+<p class="lightgreen">Posted by: <%= image_tag(@post.user.avatar, size: "40x42") %> <strong><%= link_to @post.user.username, @post.user%></strong> </p>
 <p class="postedat">Posted at: <%= @post.created_at.strftime('%H:%M:%S') %></p>
 <p><%= @post.message %></p>
 <hr>
@@ -37,7 +37,7 @@
     <% username = JSON.parse(user).to_h%>
    <% userid = username["id"] %>
 
-<p class="lightgreen">By: <%= link_to user_path(userid) do %>
+<p class="lightgreen">By: <%= image_tag(comment.user.avatar, size: "30x32") %> <%= link_to user_path(userid) do %>
     <% user = comment.user.to_json %>
     <% username = JSON.parse(user).to_h%>
    <%= username["username"] %>
