@@ -6,6 +6,7 @@
 <% @user.posts.each do |post| %>
 <p><span class="lightgreen">Posted by </span><span class ="purple"><%= post.user.username%></p></span>
 <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
+<%= image_tag(post.image.url, alt: 'Image') if post.image? %>
 <p><%= post.message %></p>
 
 <hr>
