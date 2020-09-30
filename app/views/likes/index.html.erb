@@ -1,3 +1,9 @@
+
+<div class="centered">
+Likes on this post:
+<br> <br>
 <% @post.likes.each do |like| %>
-    <li> <%= link_to(like.user.username, like.user) %></li>
+    <%= image_tag(like.user.avatar, size: "40x42") %><%=fa_icon "thumbs-up"%>  <%= link_to(like.user.username, like.user) %><br><br>
 <% end %>
+</div>
+
