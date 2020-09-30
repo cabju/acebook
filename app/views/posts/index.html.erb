@@ -33,8 +33,12 @@
   
   <div style="display:inline-block; width:50%">
   
+  <% if post.likes.count > 0 %>
   <%= link_to post_likes_path(post.id) do %>
     <p class="lightgreen"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  <% end %>
+  <% else %>
+  <p class="lightgreen"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <% end %>
 
 
