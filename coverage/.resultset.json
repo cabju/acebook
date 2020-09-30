@@ -18,6 +18,40 @@
           null
         ]
       },
+      "/Users/tamara/JS_Projects/acebook/spec/models/friendship_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/tamara/JS_Projects/acebook/app/models/friendship.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/tamara/JS_Projects/acebook/spec/models/like_spec.rb": {
         "lines": [
           1,
@@ -47,9 +81,71 @@
       "/Users/tamara/JS_Projects/acebook/app/models/post.rb": {
         "lines": [
           1,
+          null,
           1,
           1,
           1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/tamara/JS_Projects/acebook/app/uploaders/image_uploader.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -61,8 +157,41 @@
           1,
           null
         ]
+      },
+      "/Users/tamara/JS_Projects/acebook/spec/requests/pages_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/tamara/JS_Projects/acebook/spec/views/pages/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/tamara/JS_Projects/acebook/app/controllers/pages_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1601311356
+    "timestamp": 1601474557
   }
 }

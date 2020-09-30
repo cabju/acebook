@@ -1,4 +1,5 @@
-require 'carrierwave/orm/activerecord'
+require File.expand_path('../../config/environment', __FILE__)
+#require 'carrierwave/orm/activerecord'
 # Load the Rails application.
 require_relative 'application'
 
