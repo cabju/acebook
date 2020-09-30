@@ -3,7 +3,7 @@
 <div class="jumbotron" style="padding:50px">
 <%= image_tag(@user.avatar, size: "100x106") %>
 <br><br>
-<% @user.posts.each do |post| %>
+<% @user.posts.reverse_each do |post| %>
 <p><span class="lightgreen">Posted by </span><span class ="purple"><%= post.user.username%></p></span>
 <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
 <%= image_tag(post.image.url, alt: 'Image', style: "max-width:300px") if post.image? %>
