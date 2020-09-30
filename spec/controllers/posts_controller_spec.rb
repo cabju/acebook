@@ -20,7 +20,9 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
+      User.create(email: "test@email.com", password: "password")
+      sign_in User.first
+      post :create, params: { post: { message: "Hello, world!", user_id: User.first.id } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
   end
