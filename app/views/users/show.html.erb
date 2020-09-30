@@ -3,7 +3,37 @@
 <div class="jumbotron" style="padding:50px">
 <%= image_tag(@user.avatar, size: "100x106") %>
 <br><br>
+
+<div style="display:inline-block; width:40%;">
+<p><strong>Friends:</strong> <%= @user.friendships.count%></p>
+<ul>
+    <% for @friendship in @user.friendships %>
+      <li>
+      <%= image_tag(@friendship.friend.avatar, size: "30x32") %> <%= link_to @friendship.friend.username, @friendship.friend%><%if current_user.id == @user.id%> -  
+      <%= link_to "Remove friend", @friendship, :method => :delete %>
+      <%end%>
+      </li>
+  <% end %>
+</ul>
+<% if current_user.id != @user.id && !current_user.friends.exists?(@user.id)%>
+<%= button_to "Add friend", friendships_path(:friend_id => @user), :method => :post %>
+<%end%>
+<br>
+<%if current_user.id == @user.id %>
+<p><strong>Users who friended you: </strong><%= @user.inverse_friends.count%></p>
+<%else%>
+<p><strong>Users who friended <%= @user.username %>: </strong><%= @user.inverse_friends.count%></p>
+<%end%>
+<ul>
+  <% @user.inverse_friends.each do |user| %>
+  <li><%= image_tag(user.avatar, size: "30x32") %> <%= link_to user.username, user %></li>
+  <% end %>
+</ul>
+</div>
+<hr><br>
+
 <% @user.posts.reverse_each do |post| %>
+
 <p><span class="lightgreen">Posted by </span><span class ="purple"><%= post.user.username%></p></span>
 <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
 <%= image_tag(post.image.url, alt: 'Image', style: "max-width:300px") if post.image? %>
