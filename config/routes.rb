@@ -26,4 +26,6 @@ devise_scope :user do
   get 'login', to: 'devise/sessions#new'
 end
 
+resources :friendships
+
 end

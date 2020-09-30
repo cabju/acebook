@@ -48,6 +48,7 @@ group :development, :test do
   gem 'mini_magick'
   gem 'fog'
   gem 'figaro'
+  gem 'has_friendship'
 end
 
 group :development do
