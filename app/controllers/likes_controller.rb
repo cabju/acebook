@@ -11,6 +11,10 @@ class LikesController < ApplicationController
         redirect_back(fallback_location: root_path)
       end
 
+      def index
+        
+      end
+
       def destroy
         if !(already_liked?)
             flash[:notice] = "Cannot unlike this post"
