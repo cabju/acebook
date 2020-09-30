@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   end
 
   def show
+
     @post = Post.find(params[:id])
   end
 
@@ -36,9 +37,12 @@ class PostsController < ApplicationController
   def destroy
       @post = Post.find(params[:id])
       @post.destroy
-
-      #redirect_to posts_url
-      redirect_back(fallback_location: root_path)
+      
+      if posts_path(@post.id)
+        redirect_to posts_url
+      else 
+       redirect_back(fallback_location: root_path)
+      end
   end
 
   private
