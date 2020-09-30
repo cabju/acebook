@@ -32,8 +32,12 @@
   <hr>
   
   <div style="display:inline-block; width:50%">
-  <p class="lightgreen"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-  <%= link_to "View Likes", post_likes_path(post.id) %>
+  
+  <%= link_to post_likes_path(post.id) do %>
+    <p class="lightgreen"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  <% end %>
+
+
   <div style="display:inline-block">
   <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
   <% if pre_like %>

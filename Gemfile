@@ -49,6 +49,7 @@ group :development, :test do
   gem 'fog'
   gem 'figaro'
   gem 'has_friendship'
+  gem 'popupoverlay-rails'
 end
 
 group :development do

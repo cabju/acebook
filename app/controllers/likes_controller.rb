@@ -12,7 +12,10 @@ class LikesController < ApplicationController
       end
 
       def index
-        
+      end
+
+      def back
+        redirect_back(fallback_location: root_path)
       end
 
       def destroy
