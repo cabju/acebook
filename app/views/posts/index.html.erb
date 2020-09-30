@@ -12,7 +12,7 @@
  <p class="postedat">Posted at: <%= post.created_at.strftime('%H:%M:%S') %></p>
   <%= image_tag(post.image.url, alt: 'Image', style: "max-width:300px" ) if post.image? %>
 
-  <% if post.video %>
+  <% if post.video? %>
   <% link_string = post.video.to_s %>
 
   <% if link_string.include?('youtube') %>
