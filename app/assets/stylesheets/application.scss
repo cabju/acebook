@@ -144,3 +144,16 @@ input {
     border-color: #17C3B2 !important;
     border: 2px solid;
 }
+
+.centered {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    border: 1px solid;
+    border-color: #e1e2e3;
+}
+

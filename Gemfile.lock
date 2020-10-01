@@ -74,7 +74,6 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
-    dalli (2.7.11)
     declarative (0.0.20)
     declarative-option (0.1.0)
     devise (4.7.3)
@@ -281,6 +280,8 @@ GEM
       activerecord (>= 4.2.0, < 6.1)
       activesupport (>= 4.2.0, < 6.1)
       stateful_enum
+    heroku-deflater (0.6.3)
+      rack (>= 1.4.5)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -334,6 +335,8 @@ GEM
       ast (~> 2.4.1)
     pg (1.2.3)
     popper_js (1.16.0)
+    popupoverlay-rails (1.7.6)
+      railties (>= 4.0.0)
     public_suffix (4.0.6)
     puma (3.12.6)
     rack (2.2.3)
@@ -503,17 +506,18 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   carrierwave
-  dalli
   devise
   figaro
   fog
   font-awesome-rails
   has_friendship
+  heroku-deflater
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mini_magick
   pg
+  popupoverlay-rails
   puma (~> 3.7)
   rails (~> 5.1.1)
   rails_12factor

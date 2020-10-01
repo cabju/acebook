@@ -1,0 +1,16 @@
+
+<div class="centered">
+Likes on this post:
+<br> <br>
+<% @post.likes.each do |like| %>
+    <%= image_tag(like.user.avatar, size: "40x42") %><%=fa_icon "thumbs-up"%>  <%= link_to(like.user.username, like.user) %><br><br>
+<% end %>
+
+<%= button_to "Back", :back, :method => "get" %>
+</div>
+
+
+
+
+
+
