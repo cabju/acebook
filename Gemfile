@@ -64,6 +64,16 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'heroku-deflater'   
+  gem 'carrierwave'
+  gem 'devise'
+  gem 'bootstrap', '~> 4.0.0'
+  gem 'jquery-rails'
+  gem 'font-awesome-rails'
+  gem 'mini_magick'
+  gem 'fog'
+  gem 'figaro'
+  gem 'has_friendship'
+  gem 'popupoverlay-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
