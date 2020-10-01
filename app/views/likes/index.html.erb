@@ -1,12 +1,14 @@
-
-<div class="centered">
-Likes on this post:
-<br> <br>
+<div class="jumbotron" style="padding:50px">
+<p><strong class="purple usernamefont"><%=fa_icon "thumbs-up"%> Likes on this post</strong></p>
+<div class="jumbotron" style="padding:50px">
 <% @post.likes.each do |like| %>
-    <%= image_tag(like.user.avatar, size: "40x42") %><%=fa_icon "thumbs-up"%>  <%= link_to(like.user.username, like.user) %><br><br>
+    <p><%= image_tag(like.user.avatar, size: "80x82") %><span class="purple"><%=fa_icon "thumbs-up"%></span>  <strong><%= link_to(like.user.username, like.user) %></strong>
+    liked this post at <%= like.created_at.strftime('%H:%M:%S') %>
+    </p>
 <% end %>
 
-<%= button_to "Back", :back, :method => "get" %>
+</div>
+<div style="float: right"><%= button_to "Back", :back, :method => "get" %></div>
 </div>
 
 
