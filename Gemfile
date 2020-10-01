@@ -10,6 +10,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -48,37 +49,13 @@ group :development, :test do
   gem 'fog'
   gem 'figaro'
   gem 'has_friendship'
+  gem 'popupoverlay-rails'
+  gem 'dotenv-rails', :groups => [:development, :test]
 end
 
 group :development do
-  gem 'devise'
-  gem 'bootstrap', '~> 4.0.0'
-  gem 'jquery-rails'
-  gem 'font-awesome-rails'
-  gem 'carrierwave'
-  gem 'mini_magick'
-  gem 'fog'
-  gem 'figaro'
-  gem 'has_friendship'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'sqlite3'
 end
-
-group :production do    
-  gem 'pg'
-  gem 'rails_12factor'
-  gem 'heroku-deflater' 
-  gem 'devise'
-  gem 'bootstrap', '~> 4.0.0'
-  gem 'jquery-rails'
-  gem 'font-awesome-rails'
-  gem 'carrierwave'
-  gem 'mini_magick'
-  gem 'fog'
-  gem 'figaro'
-  gem 'has_friendship'  
-end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
