@@ -37,6 +37,12 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+
+  ENV["AWS_ACCESS_KEY_ID"] = 'AKIAIKARPRCC6K7HHMGA'
+  ENV["AWS_SECRET_ACCESS_KEY"] = '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'
+
+  
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

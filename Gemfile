@@ -50,6 +50,7 @@ group :development, :test do
   gem 'figaro'
   gem 'has_friendship'
   gem 'popupoverlay-rails'
+  gem 'dotenv-rails', :groups => [:development, :test]
 end
 
 group :development do
