@@ -74,6 +74,7 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    dalli (2.7.11)
     declarative (0.0.20)
     declarative-option (0.1.0)
     devise (4.7.3)
@@ -280,8 +281,6 @@ GEM
       activerecord (>= 4.2.0, < 6.1)
       activesupport (>= 4.2.0, < 6.1)
       stateful_enum
-    heroku-deflater (0.6.3)
-      rack (>= 1.4.5)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -464,6 +463,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     stateful_enum (0.6.0)
     strscan (1.0.3)
     terminal-table (1.8.0)
@@ -503,12 +503,12 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   carrierwave
+  dalli
   devise
   figaro
   fog
   font-awesome-rails
   has_friendship
-  heroku-deflater
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
@@ -523,6 +523,7 @@ DEPENDENCIES
   selenium-webdriver
   simplecov
   simplecov-console
+  sqlite3
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
