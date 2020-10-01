@@ -32,7 +32,7 @@
 
 <div class="navfont">
   <% if user_signed_in? %>
-    <%= image_tag(current_user.avatar, size: "30x32") %> Logged in as <strong class="usernamefont"><%= current_user.username %></strong>
+    <%= image_tag(current_user.avatar, size: "30x32") %> Logged in as <strong class="usernamefont"><%= link_to current_user.username, current_user%></strong></strong>
     <br>
     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'test' %> |
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'test'  %>
